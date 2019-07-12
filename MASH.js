@@ -14,7 +14,7 @@ function getHome() {
 
 function getChildrenCount() {
     if (process.argv[3] != "" || (Math.random() < 0.5)) {
-        return [Math.floor(Math.random() * (101-0))];
+        return [Math.floor(Math.random() * (11-0))];
     }
     else {
         return (process.argv[3]);
