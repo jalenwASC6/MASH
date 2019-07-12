@@ -4,34 +4,34 @@ let sal = ["$100,000", "$2", "$15,000", "$40,000"];
 function mash() {
     return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + "," + " and have a yearly salary of " + getSalary() + "!" 
 }
+function randomizer(range) {
+    return Math.floor(Math.random() * (range))
+}
 function getHome() {
-    if (process.argv[2] != undefined) {
+    if (process.argv[2] != " ") {
         home.push(process.argv[2]);
     }
-
-    return home[Math.floor(Math.random()*home.length)];
+    return home[randomizer(home.length)];
 }
-
 function getChildrenCount() {
     if (process.argv[3] != "" || (Math.random() < 0.5)) {
-        return [Math.floor(Math.random() * (11-0))];
+        return [randomizer(10)];
     }
     else {
         return (process.argv[3]);
     }
 }
-
 function getCar() {
-
     if (process.argv[4] != "" || (Math.random() < 0.5)) {
-        return car[Math.floor(Math.random()*car.length)];
+        return car[randomizer(car.length)];
     }
     else{
         return process.argv[4];
     }
 }
-
 function getSalary() {
-    return sal[Math.floor(Math.random()*sal.length)];
+    return sal[randomizer(sal.length)];
 }
 console.log(mash());
+
+
