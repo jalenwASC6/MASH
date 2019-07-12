@@ -4,7 +4,6 @@ let salary = ["$100,000", "$2", "$15,000", "$40,000"];
 function mash() {
 return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + " and have a yearly salary of " + sal() + "!" 
 }
-
 function getHome() {
 return home[Math.floor(Math.random()*home.length)];
 }
@@ -17,7 +16,6 @@ else{
 return (process.argv[3]);
 }
 }
-
 function getCar() {
 if (Math.random() < 0.33) {
 return car[Math.floor(Math.random()*car.length)];
@@ -26,9 +24,7 @@ else{
 return process.argv[4];
 }
 }
-
 function sal() {
 return salary[Math.floor(Math.random()*salary.length)];
 }
-
 console.log(mash());
