@@ -1,8 +1,8 @@
 let home = ["Mansion", "Apartment", "Shack", "House"];
 let car = ["Lamborghini", "Box with Wheels", "Convertible", "Bugatti"];
-let salary = ["$100,000", "$2", "$15,000", "$40,000"];
+let sal = ["$100,000", "$2", "$15,000", "$40,000"];
 function mash() {
-return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + " and have a yearly salary of " + sal() + "!" 
+return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + " and have a yearly salary of " + getSalary() + "!" 
 }
 function getHome() {
 return home[Math.floor(Math.random()*home.length)];
@@ -24,7 +24,7 @@ else{
 return process.argv[4];
 }
 }
-function sal() {
-return salary[Math.floor(Math.random()*salary.length)];
+function getSalary() {
+return sal[Math.floor(Math.random()*sal.length)];
 }
 console.log(mash());
