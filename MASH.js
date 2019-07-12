@@ -2,29 +2,36 @@ let home = ["Mansion", "Apartment", "Shack", "House"];
 let car = ["Lamborghini", "Box with Wheels", "Convertible", "Bugatti"];
 let sal = ["$100,000", "$2", "$15,000", "$40,000"];
 function mash() {
-return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + "," + " and have a yearly salary of " + getSalary() + "!" 
+    return "You will live in a " + getHome() + ", with " + getChildrenCount() + " kids, drive a " + getCar() + "," + " and have a yearly salary of " + getSalary() + "!" 
 }
 function getHome() {
-return home[Math.floor(Math.random()*home.length)];
+    if (process.argv[2] != undefined) {
+        home.push(process.argv[2]);
+    }
+
+    return home[Math.floor(Math.random()*home.length)];
 }
-home.push(process.argv[2])
+
 function getChildrenCount() {
-if (Math.random() < 0.5) {
-return [Math.floor(Math.random() * 100 + 1)];
+    if (process.argv[3] != "" || (Math.random() < 0.5)) {
+        return [Math.floor(Math.random() * (101-0))];
+    }
+    else {
+        return (process.argv[3]);
+    }
 }
-else {
-return (process.argv[3]);
-}
-}
+
 function getCar() {
-if (Math.random() < 0.33) {
-return car[Math.floor(Math.random()*car.length)];
+
+    if (process.argv[4] != "" || (Math.random() < 0.5)) {
+        return car[Math.floor(Math.random()*car.length)];
+    }
+    else{
+        return process.argv[4];
+    }
 }
-else{
-return process.argv[4];
-}
-}
+
 function getSalary() {
-return sal[Math.floor(Math.random()*sal.length)];
+    return sal[Math.floor(Math.random()*sal.length)];
 }
 console.log(mash());
