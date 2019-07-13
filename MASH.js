@@ -11,10 +11,10 @@ function getHome() {
     if (process.argv[2] != " ") {
         home.push(process.argv[2]);
     }
-    return home[randomizer(home.length)];
+    return home[randomizer(home.length-1)];
 }
 function getChildrenCount() {
-    if (process.argv[3] != "" || (Math.random() < 0.5)) {
+    if (process.argv[3] != " " || (Math.random() < 0.5)) {
         return [randomizer(10)];
     }
     else {
@@ -22,15 +22,15 @@ function getChildrenCount() {
     }
 }
 function getCar() {
-    if (process.argv[4] != "" || (Math.random() < 0.5)) {
-        return car[randomizer(car.length)];
+    if (process.argv[4] != " " || (Math.random() < 0.33)) {
+        return car[randomizer(car.length-1)];
     }
     else{
         return process.argv[4];
     }
 }
 function getSalary() {
-    return sal[randomizer(sal.length)];
+    return sal[randomizer(sal.length-1)];
 }
 console.log(mash());
 
